@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://bo23p4re8knbd"]
+
+[ext_resource type="Texture2D" uid="uid://bnoouyl3jvcit" path="res://Captura de tela 2025-09-13 032402.png" id="1_s41d2"]
+[ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="2_gtnvv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_54b6e"]
+size = Vector3(15, 1, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gtnvv"]
+albedo_texture = ExtResource("1_s41d2")
+uv1_scale = Vector3(15, 15, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s41d2"]
+material = SubResource("StandardMaterial3D_gtnvv")
+size = Vector3(15, 1, 15)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gtnvv"]
+sky_top_color = Color(0.104072, 0.0920655, 0.102175, 1)
+sky_horizon_color = Color(0.893281, 0.893215, 0.89502, 1)
+ground_bottom_color = Color(0.720316, 0.73206, 0.729171, 1)
+ground_horizon_color = Color(0.893281, 0.893215, 0.89502, 1)
+
+[sub_resource type="Sky" id="Sky_wav5q"]
+sky_material = SubResource("ProceduralSkyMaterial_gtnvv")
+
+[sub_resource type="Environment" id="Environment_xto7t"]
+background_mode = 2
+sky = SubResource("Sky_wav5q")
+
+[node name="Level" type="Node3D"]
+
+[node name="floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("BoxShape3D_54b6e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+mesh = SubResource("BoxMesh_s41d2")
+
+[node name="Player" parent="." instance=ExtResource("2_gtnvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22957, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.119305, 0.992858, 2.73521e-10, 0.849551, -0.102085, 0.517534, 0.513838, -0.0617445, -0.855662, 0, 9.08747, -7.29922)
+light_color = Color(0.352946, 0.674503, 0.991279, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xto7t")
