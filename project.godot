@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Categoria 33"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/citycrafter/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
+
 [input]
 
 frente={
