@@ -1,0 +1,147 @@
+[gd_scene load_steps=16 format=3 uid="uid://cpybn82fv801j"]
+
+[ext_resource type="Script" uid="uid://d21jg13lye1ik" path="res://addons/zylann.hterrain/hterrain.gd" id="1_g0y47"]
+[ext_resource type="Resource" uid="uid://cj7vksl0qgbsd" path="res://Terrain 2/data.hterrain" id="2_pj618"]
+[ext_resource type="Script" uid="uid://5rmpx7pbcbjv" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0uohm"]
+[ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="4_suvth"]
+[ext_resource type="Texture2D" uid="uid://d1ww02blf8w01" path="res://testes/olhar de elto.png" id="5_pj618"]
+
+[sub_resource type="Resource" id="Resource_hy6ad"]
+script = ExtResource("3_0uohm")
+mode = 0
+textures = [[], []]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g0y47"]
+sky_top_color = Color(1, 1, 1, 1)
+sky_horizon_color = Color(1.08325, 1.08325, 1.08325, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(1.08325, 1.08325, 1.08325, 1)
+energy_multiplier = 0.4
+
+[sub_resource type="Sky" id="Sky_pj618"]
+sky_material = SubResource("ProceduralSkyMaterial_g0y47")
+
+[sub_resource type="Environment" id="Environment_0uohm"]
+background_mode = 2
+sky = SubResource("Sky_pj618")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0uohm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_suvth"]
+material = SubResource("StandardMaterial3D_0uohm")
+size = Vector3(50, 12, 50)
+
+[sub_resource type="PrismMesh" id="PrismMesh_hy6ad"]
+size = Vector3(15, 15, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4maxh"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h7j41"]
+material = SubResource("StandardMaterial3D_4maxh")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uwaey"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="HTerrain" type="Node3D"]
+script = ExtResource("1_g0y47")
+centered = true
+_terrain_data = ExtResource("2_pj618")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_hy6ad")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://d21jg13lye1ik"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.93606, -0.0538268, 0.3477, 0, 0.988228, 0.152986, -0.351842, -0.143204, 0.925041, 0, 0, 0)
+light_color = Color(0.193655, 0.189347, 0.192641, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0uohm")
+
+[node name="Player" parent="." instance=ExtResource("4_suvth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9857, 30.7315, -184.086)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.0772, 0, 0, 0, 1.22641, 0, 0, 0, 1, -43.9429, 7.77423, 160.148)
+mesh = SubResource("BoxMesh_suvth")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.86681, 0, 0, 0, 1, 0, 0, 0, 3.87045, -43.914, 22.6225, 158.783)
+mesh = SubResource("PrismMesh_hy6ad")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.52, 0, 0, 0, 11.7325, 0, 0, 0, -0.08, -45, 6, 135)
+mesh = SubResource("BoxMesh_h7j41")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(7.52, 0, 0, 0, 11.7325, 0, 0, 0, -0.08, -45, 6, 135)
+shape = SubResource("ConcavePolygonShape3D_uwaey")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 57, 102)
+pixel_size = 0.15
+billboard = 1
+texture = ExtResource("5_pj618")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 91, 8)
+pixel_size = 0.15
+billboard = 1
+texture = ExtResource("5_pj618")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166, 12, 102)
+pixel_size = 0.15
+billboard = 1
+texture = ExtResource("5_pj618")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138, 30, -107)
+pixel_size = 0.15
+billboard = 1
+texture = ExtResource("5_pj618")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142, 57, 168)
+pixel_size = 0.15
+billboard = 1
+texture = ExtResource("5_pj618")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104, 36, 175)
+pixel_size = 0.15
+billboard = 1
+texture = ExtResource("5_pj618")
+
+[node name="Sprite3D7" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88, 57, -115)
+pixel_size = 0.15
+billboard = 1
+texture = ExtResource("5_pj618")
+
+[node name="Sprite3D8" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212, 57, 75)
+pixel_size = 0.15
+billboard = 1
+texture = ExtResource("5_pj618")
+
+[node name="Sprite3D9" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 187, 84, 205)
+pixel_size = 0.15
+billboard = 1
+texture = ExtResource("5_pj618")
