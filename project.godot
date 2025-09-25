@@ -13,7 +13,7 @@ config_version=5
 config/name="Categoria 33"
 config/tags=PackedStringArray("33", "horror", "indie", "suspense")
 run/main_scene="uid://bo23p4re8knbd"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]

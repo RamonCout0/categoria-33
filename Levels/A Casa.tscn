@@ -1,10 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://cpybn82fv801j"]
+[gd_scene load_steps=20 format=3 uid="uid://cpybn82fv801j"]
 
 [ext_resource type="Script" uid="uid://d21jg13lye1ik" path="res://addons/zylann.hterrain/hterrain.gd" id="1_g0y47"]
-[ext_resource type="Resource" uid="uid://cj7vksl0qgbsd" path="res://Terrain 2/data.hterrain" id="2_pj618"]
+[ext_resource type="Resource" path="res://Terrain 2/data.hterrain" id="2_pj618"]
 [ext_resource type="Script" uid="uid://5rmpx7pbcbjv" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0uohm"]
 [ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="4_suvth"]
 [ext_resource type="Texture2D" uid="uid://d1ww02blf8w01" path="res://testes/olhar de elto.png" id="5_pj618"]
+[ext_resource type="Texture2D" uid="uid://5vc0xkytpe1e" path="res://testes/Sem títuloa.png" id="6_suvth"]
+[ext_resource type="Texture2D" uid="uid://dxadh306iehoh" path="res://testes/Captura de tela 2025-07-20 232519.png" id="7_hy6ad"]
+[ext_resource type="Texture2D" uid="uid://b6cl1mvvirhsh" path="res://testes/yiur.png" id="8_hy6ad"]
+[ext_resource type="Texture2D" uid="uid://uml0x37a3f6u" path="res://testes/Sem títulos.png" id="9_4maxh"]
 
 [sub_resource type="Resource" id="Resource_hy6ad"]
 script = ExtResource("3_0uohm")
@@ -72,7 +76,7 @@ shadow_enabled = true
 environment = SubResource("Environment_0uohm")
 
 [node name="Player" parent="." instance=ExtResource("4_suvth")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9857, 30.7315, -184.086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9857, 165.81523, 0.723999)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.0772, 0, 0, 0, 1.22641, 0, 0, 0, 1, -43.9429, 7.77423, 160.148)
@@ -145,3 +149,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 187, 84, 205)
 pixel_size = 0.15
 billboard = 1
 texture = ExtResource("5_pj618")
+
+[node name="Sprite3D10" type="Sprite3D" parent="."]
+transform = Transform3D(-0.9974607, 0, 0.071218856, 0, 1, 0, -0.071218856, 0, -0.9974607, -42.360977, 10.022835, 86.98317)
+pixel_size = 0.03
+billboard = 2
+texture = ExtResource("6_suvth")
+
+[node name="Sprite3D11" type="Sprite3D" parent="."]
+transform = Transform3D(-0.9974607, 0, 0.071218856, 0, 1, 0, -0.071218856, 0, -0.9974607, -53.996246, 2642.915, 136.00883)
+pixel_size = 9.1529
+billboard = 1
+texture = ExtResource("7_hy6ad")
+
+[node name="Sprite3D12" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.671219, 10.266579, 0)
+pixel_size = 0.02
+billboard = 2
+texture = ExtResource("8_hy6ad")
+
+[node name="Sprite3D13" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.662712, 19.696724, 0)
+pixel_size = 0.021
+billboard = 1
+texture = ExtResource("9_4maxh")
