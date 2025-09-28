@@ -14,11 +14,15 @@ config/name="Categoria 33"
 config/tags=PackedStringArray("33", "horror", "indie", "suspense")
 run/main_scene="uid://bo23p4re8knbd"
 config/features=PackedStringArray("4.5", "Forward Plus")
+<<<<<<< HEAD
 config/icon="uid://76sfti3yx67g"
 
 [autoload]
 
 Dialogos="*res://HUD/dialogos.tscn"
+=======
+config/icon="res://icon.svg"
+>>>>>>> b56f95f6e0df687b43d4d4911d3c07d7ee2bba2d
 
 [dotnet]
 
