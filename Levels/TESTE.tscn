@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://djf3cfusvl33y"]
+[gd_scene load_steps=11 format=3 uid="uid://djf3cfusvl33y"]
 
 [ext_resource type="Script" uid="uid://d21jg13lye1ik" path="res://addons/zylann.hterrain/hterrain.gd" id="1_bkbwe"]
 [ext_resource type="Resource" uid="uid://dfscghfg57il6" path="res://Terrain/data.hterrain" id="2_urt78"]
 [ext_resource type="Script" uid="uid://5rmpx7pbcbjv" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_twu0v"]
-[ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="4_bhjkq"]
 [ext_resource type="Texture2D" uid="uid://dxadh306iehoh" path="res://testes/Captura de tela 2025-07-20 232519.png" id="5_urt78"]
 [ext_resource type="Texture2D" uid="uid://bnoouyl3jvcit" path="res://Captura de tela 2025-09-13 032402.png" id="6_twu0v"]
 [ext_resource type="Texture2D" uid="uid://d1ww02blf8w01" path="res://testes/olhar de elto.png" id="7_bhjkq"]
@@ -54,9 +53,6 @@ environment = SubResource("Environment_bhjkq")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0.215484, 0.127958, 0.968087, -0.451184, 0.892259, -0.0175075, 0, 305.829, 0)
 shadow_enabled = true
 sky_mode = 1
-
-[node name="Player" parent="." instance=ExtResource("4_bhjkq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.4405, 3.89418, -13.5788)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.0163504, 0, -57.5302, 0, 0.76116, 0, -0.801266, 0, -1.17394, -80.963, 3.60168, -13.6094)

@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://cpybn82fv801j"]
+[gd_scene load_steps=20 format=3 uid="uid://dtsdfmqe0jp3f"]
 
 [ext_resource type="Script" uid="uid://d21jg13lye1ik" path="res://addons/zylann.hterrain/hterrain.gd" id="1_g0y47"]
 [ext_resource type="Resource" uid="uid://cj7vksl0qgbsd" path="res://Terrain 2/data.hterrain" id="2_pj618"]
 [ext_resource type="Script" uid="uid://5rmpx7pbcbjv" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0uohm"]
 [ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="4_suvth"]
-[ext_resource type="Texture2D" uid="uid://d1ww02blf8w01" path="res://testes/olhar de elto.png" id="5_pj618"]
+[ext_resource type="PackedScene" uid="uid://cgk4173ptdfkq" path="res://npcs/npc.tscn" id="5_pj618"]
+[ext_resource type="Texture2D" uid="uid://k22o8ulgv3mg" path="res://testes/pet.png" id="6_0uohm"]
+[ext_resource type="Texture2D" uid="uid://dxadh306iehoh" path="res://testes/Captura de tela 2025-07-20 232519.png" id="7_suvth"]
 
 [sub_resource type="Resource" id="Resource_hy6ad"]
 script = ExtResource("3_0uohm")
@@ -31,8 +33,14 @@ sky = SubResource("Sky_pj618")
 material = SubResource("StandardMaterial3D_0uohm")
 size = Vector3(50, 12, 50)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_g0y47"]
+data = PackedVector3Array(-25, 6, 25, 25, 6, 25, -25, -6, 25, 25, 6, 25, 25, -6, 25, -25, -6, 25, 25, 6, -25, -25, 6, -25, 25, -6, -25, -25, 6, -25, -25, -6, -25, 25, -6, -25, 25, 6, 25, 25, 6, -25, 25, -6, 25, 25, 6, -25, 25, -6, -25, 25, -6, 25, -25, 6, -25, -25, 6, 25, -25, -6, -25, -25, 6, 25, -25, -6, 25, -25, -6, -25, 25, 6, 25, -25, 6, 25, 25, 6, -25, -25, 6, 25, -25, 6, -25, 25, 6, -25, -25, -6, 25, 25, -6, 25, -25, -6, -25, 25, -6, 25, 25, -6, -25, -25, -6, -25)
+
 [sub_resource type="PrismMesh" id="PrismMesh_hy6ad"]
 size = Vector3(15, 15, 15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pj618"]
+data = PackedVector3Array(0, 7.5, 7.5, 7.5, -7.5, 7.5, -7.5, -7.5, 7.5, 0, 7.5, -7.5, -7.5, -7.5, -7.5, 7.5, -7.5, -7.5, 0, 7.5, 7.5, 0, 7.5, -7.5, 7.5, -7.5, 7.5, 0, 7.5, -7.5, 7.5, -7.5, -7.5, 7.5, -7.5, 7.5, 0, 7.5, -7.5, 0, 7.5, 7.5, -7.5, -7.5, -7.5, 0, 7.5, 7.5, -7.5, -7.5, 7.5, -7.5, -7.5, -7.5, -7.5, -7.5, 7.5, 7.5, -7.5, 7.5, -7.5, -7.5, -7.5, 7.5, -7.5, 7.5, 7.5, -7.5, -7.5, -7.5, -7.5, -7.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4maxh"]
 albedo_color = Color(0, 0, 0, 1)
@@ -40,14 +48,15 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_h7j41"]
 material = SubResource("StandardMaterial3D_4maxh")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uwaey"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0uohm"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="HTerrain" type="Node3D"]
 script = ExtResource("1_g0y47")
+map_scale = Vector3(1, 1, 0.5)
 centered = true
 _terrain_data = ExtResource("2_pj618")
-chunk_size = 32
+chunk_size = 16
 collision_enabled = true
 collision_layer = 1
 collision_mask = 1
@@ -72,76 +81,44 @@ shadow_enabled = true
 environment = SubResource("Environment_0uohm")
 
 [node name="Player" parent="." instance=ExtResource("4_suvth")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9857, 30.7315, -184.086)
+transform = Transform3D(0.006143472, 0, -0.9999812, 0, 1, 0, 0.9999812, 0, 0.006143472, -26.78241, 0.68553305, 77.69967)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.0772, 0, 0, 0, 1.22641, 0, 0, 0, 1, -43.9429, 7.77423, 160.148)
+transform = Transform3D(0.41127557, 0, 0, 0, 0.4645236, 0, 0, 0, 0.2799999, -44.154778, 3.4815722, 94.09812)
 mesh = SubResource("BoxMesh_suvth")
 metadata/_edit_group_ = true
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.41127557, 0, 0, 0, 0.4645236, 0, 0, 0, 0.2799999, -44.154778, 3.4815722, 94.09812)
+shape = SubResource("ConcavePolygonShape3D_g0y47")
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.86681, 0, 0, 0, 1, 0, 0, 0, 3.87045, -43.914, 22.6225, 158.783)
+transform = Transform3D(1.4763502, 0, 0, 0, 0.37876698, 0, 0, 0, 1.0837257, -44.143745, 9.105606, 93.71593)
 mesh = SubResource("PrismMesh_hy6ad")
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.52, 0, 0, 0, 11.7325, 0, 0, 0, -0.08, -45, 6, 135)
-mesh = SubResource("BoxMesh_h7j41")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.4763502, 0, 0, 0, 0.37876698, 0, 0, 0, 1.0837257, -44.143745, 9.105606, 93.71593)
+shape = SubResource("ConcavePolygonShape3D_pj618")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(7.52, 0, 0, 0, 11.7325, 0, 0, 0, -0.08, -45, 6, 135)
-shape = SubResource("ConcavePolygonShape3D_uwaey")
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.87114, 0, 0, 0, 4.443884, 0, 0, 0, -0.022399992, -44.55838, 2.8095522, 87.05668)
+mesh = SubResource("BoxMesh_h7j41")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.87114, 0, 0, 0, 4.443884, 0, 0, 0, -0.022399992, -44.55838, 2.8095522, 87.05668)
+shape = SubResource("ConcavePolygonShape3D_0uohm")
+
+[node name="NPC" parent="." instance=ExtResource("5_pj618")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.910482, 1.3081765, 77.71252)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 57, 102)
-pixel_size = 0.15
-billboard = 1
-texture = ExtResource("5_pj618")
+transform = Transform3D(-0.2858221, 0, -0.9582827, 0, 1, 0, 0.9582827, 0, -0.2858221, -21.949547, -0.0285151, 76.41117)
+texture = ExtResource("6_0uohm")
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 91, 8)
-pixel_size = 0.15
-billboard = 1
-texture = ExtResource("5_pj618")
-
-[node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166, 12, 102)
-pixel_size = 0.15
-billboard = 1
-texture = ExtResource("5_pj618")
-
-[node name="Sprite3D4" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138, 30, -107)
-pixel_size = 0.15
-billboard = 1
-texture = ExtResource("5_pj618")
-
-[node name="Sprite3D5" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142, 57, 168)
-pixel_size = 0.15
-billboard = 1
-texture = ExtResource("5_pj618")
-
-[node name="Sprite3D6" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104, 36, 175)
-pixel_size = 0.15
-billboard = 1
-texture = ExtResource("5_pj618")
-
-[node name="Sprite3D7" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88, 57, -115)
-pixel_size = 0.15
-billboard = 1
-texture = ExtResource("5_pj618")
-
-[node name="Sprite3D8" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212, 57, 75)
-pixel_size = 0.15
-billboard = 1
-texture = ExtResource("5_pj618")
-
-[node name="Sprite3D9" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 187, 84, 205)
-pixel_size = 0.15
-billboard = 1
-texture = ExtResource("5_pj618")
+[node name="sol" type="Sprite3D" parent="."]
+transform = Transform3D(0.9726625, 0, 0.23222327, 0, 1, 0, -0.23222327, 0, 0.9726625, 151.84976, 134.96442, 528.5121)
+pixel_size = 1.0
+billboard = 2
+texture = ExtResource("7_suvth")
