@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://ce1djyvomgpwn"]
 
-[ext_resource type="Script" uid="uid://bw3wjkfjx4mot" path="res://Npc/Repete/repete.gd" id="1_68v4n"]
+[ext_resource type="Script" uid="uid://bw3wjkfjx4mot" path="res://repete.gd" id="1_68v4n"]
 [ext_resource type="Texture2D" uid="uid://cup8f6521ghbk" path="res://Npc/Repete/repete aprimoradp-Sheet.png" id="2_68v4n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqyqw"]

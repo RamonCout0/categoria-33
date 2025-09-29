@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxrvwq1rjirfm"]
+
+[ext_resource type="Texture2D" uid="uid://cpnica8ksgpu6" path="res://Npc/Pet/pet.png" id="1_bsx6j"]
+[ext_resource type="Script" uid="uid://bkkgiljasug67" path="res://Npc/Pet/pet.gd" id="1_lbq63"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lbq63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bsx6j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cn58c"]
+
+[node name="pet" type="Area3D"]
+script = ExtResource("1_lbq63")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_lbq63")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42663252, 0)
+shape = SubResource("CapsuleShape3D_cn58c")

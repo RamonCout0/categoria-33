@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dovssi26ref30"]
+[gd_scene load_steps=6 format=3 uid="uid://dovssi26ref30"]
 
 [ext_resource type="Script" uid="uid://nn2gkk8rw7qh" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://bhbgv7hf67thd" path="res://Player/fp_camera.gd" id="2_4ntmi"]
 [ext_resource type="PackedScene" uid="uid://cuw6q3ds7ny0n" path="res://HUD/mira.tscn" id="3_btcbx"]
-[ext_resource type="Texture2D" uid="uid://dqwgb0di56jwo" path="res://Testes/felipe.png" id="4_gwnis"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvfyp"]
 
@@ -34,7 +33,3 @@ collision_mask = 5
 collide_with_areas = true
 
 [node name="HUD" parent="." instance=ExtResource("3_btcbx")]
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.34390914, 0, 0, 0, 0.29029128, 0, 0, 0, 1, 0, 1.6403663, -0.08768076)
-texture = ExtResource("4_gwnis")

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="4_hy6ad"]
 [ext_resource type="PackedScene" uid="uid://b373jy2q7v88s" path="res://Objetos/Porta/porta.tscn" id="5_pj618"]
 [ext_resource type="PackedScene" uid="uid://ce1djyvomgpwn" path="res://Npc/Repete/repete.tscn" id="6_0uohm"]
-[ext_resource type="PackedScene" uid="uid://bbknxxfju425m" path="res://HUD/Dialogos/dialogos.tscn" id="7_suvth"]
+[ext_resource type="Texture2D" uid="uid://vkwoedtfcb66" path="res://Testes/olhar de elto.png" id="7_suvth"]
 
 [sub_resource type="Resource" id="Resource_h7j41"]
 script = ExtResource("3_suvth")
@@ -65,23 +65,28 @@ metadata/_custom_type_script = "uid://bde0f32up3rn"
 environment = SubResource("Environment_hy6ad")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.850212, -0.32999286, 0.41017598, 0.16474096, 0.5732406, 0.8026554, -0.50000006, 0.75, -0.43301266, 0, 33.36335, 0)
+transform = Transform3D(-0.80593693, -0.5859674, -0.08430941, -0.3169634, 0.30682614, 0.8974364, -0.50000006, 0.75, -0.43301263, 0, 33.36335, 0)
 light_color = Color(0, 0, 0, 1)
 shadow_enabled = true
 directional_shadow_max_distance = 10.0
 
 [node name="Player" parent="." instance=ExtResource("4_hy6ad")]
-transform = Transform3D(0.035161115, 0, 0.99938166, 0, 1, 0, -0.99938166, 0, 0.035161115, 10.2822, 0.6815326, 0.49504805)
+transform = Transform3D(0.035161115, 0, 0.99938166, 0, 1, 0, -0.99938166, 0, 0.035161115, 0.9321461, 0.6815326, -7.052415)
 
 [node name="porta" parent="." instance=ExtResource("5_pj618")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 3.4978507, 0, 0, 0, 1, 0, 1.6152861, 0)
+transform = Transform3D(1.8284829, 0, 0, 0, 3.4978507, 0, 0, 0, 2.0104895, -1.8791676, 1.6152861, 5.6245255)
 material_override = SubResource("StandardMaterial3D_pj618")
 mesh = SubResource("BoxMesh_hy6ad")
 
 [node name="Repete" parent="." instance=ExtResource("6_0uohm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36969444, 0.7571505, -6.0596914)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 2.8148704, 1.327227, -5.2788534)
 
-[node name="Dialogos" parent="." instance=ExtResource("7_suvth")]
+[node name="Olhar" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204.17078, 1408.3066, -608.53)
+pixel_size = 1.123
+billboard = 1
+texture_filter = 1
+texture = ExtResource("7_suvth")
