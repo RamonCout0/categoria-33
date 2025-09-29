@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtsdfmqe0jp3f"]
+[gd_scene load_steps=13 format=3 uid="uid://dtsdfmqe0jp3f"]
 
 [ext_resource type="Script" uid="uid://bde0f32up3rn" path="res://addons/zylann.hterrain/hterrain.gd" id="1_pj618"]
-[ext_resource type="Resource" uid="uid://doslql8px5rfa" path="res://Levels/Terrenos/data.hterrain" id="2_0uohm"]
+[ext_resource type="Resource" path="res://Levels/Terrenos/data.hterrain" id="2_0uohm"]
 [ext_resource type="Script" uid="uid://b5shkgaq33p20" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_suvth"]
 [ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="4_hy6ad"]
 [ext_resource type="PackedScene" uid="uid://b373jy2q7v88s" path="res://Objetos/Porta/porta.tscn" id="5_pj618"]
@@ -24,7 +24,19 @@ sky_material = SubResource("ProceduralSkyMaterial_0uohm")
 [sub_resource type="Environment" id="Environment_hy6ad"]
 background_mode = 2
 sky = SubResource("Sky_suvth")
+ssr_enabled = true
 glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pj618"]
+metallic = 1.0
+roughness = 0.0
+refraction_enabled = true
+refraction_scale = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0uohm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hy6ad"]
+material = SubResource("StandardMaterial3D_0uohm")
 
 [node name="ACasa" type="Node3D"]
 script = ExtResource("1_pj618")
@@ -57,7 +69,17 @@ shadow_enabled = true
 directional_shadow_max_distance = 10.0
 
 [node name="Player" parent="." instance=ExtResource("4_hy6ad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2822, 1.2505524, 3.5430446)
+transform = Transform3D(0.035161115, 0, 0.99938166, 0, 1, 0, -0.99938166, 0, 0.035161115, 10.2822, 0.6815326, 0.49504805)
 
-[node name="Node3D" parent="." instance=ExtResource("5_pj618")]
+[node name="porta" parent="." instance=ExtResource("5_pj618")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.4978507, 0, 0, 0, 1, 0, 1.6152861, 0)
+material_override = SubResource("StandardMaterial3D_pj618")
+mesh = SubResource("BoxMesh_hy6ad")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D"]
+
+[node name="Player2" parent="." instance=ExtResource("4_hy6ad")]
+transform = Transform3D(-0.99752736, 0, 0.07027875, 0, 1, 0, -0.07027875, 0, -0.99752736, 11.560072, 0.79975224, -2.0722346)
