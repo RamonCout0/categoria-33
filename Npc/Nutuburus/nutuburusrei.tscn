@@ -1,0 +1,98 @@
+[gd_scene load_steps=14 format=3 uid="uid://cudsg0e5e6wrg"]
+
+[ext_resource type="Script" uid="uid://wqk5s2xo0w6p" path="res://Npc/Nutuburus/nutuburusrei.gd" id="1_0bhhq"]
+[ext_resource type="Texture2D" uid="uid://btjtygnsuvimi" path="res://Npc/Nutuburus/nutubus rei-Sheet.png" id="1_e8gf4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bhhq"]
+atlas = ExtResource("1_e8gf4")
+region = Rect2(0, 0, 77, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cvhr"]
+atlas = ExtResource("1_e8gf4")
+region = Rect2(0, 0, 77, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4ytt"]
+atlas = ExtResource("1_e8gf4")
+region = Rect2(77, 0, 77, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nnmi"]
+atlas = ExtResource("1_e8gf4")
+region = Rect2(154, 0, 77, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ug8d"]
+atlas = ExtResource("1_e8gf4")
+region = Rect2(231, 0, 77, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbf74"]
+atlas = ExtResource("1_e8gf4")
+region = Rect2(308, 0, 77, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84fn6"]
+atlas = ExtResource("1_e8gf4")
+region = Rect2(385, 0, 77, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdmbs"]
+atlas = ExtResource("1_e8gf4")
+region = Rect2(462, 0, 77, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy4gf"]
+atlas = ExtResource("1_e8gf4")
+region = Rect2(539, 0, 77, 89)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3b8c2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bhhq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cvhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4ytt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nnmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ug8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbf74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84fn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdmbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy4gf")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 120.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cf3xv"]
+
+[node name="Nutuburusrei" type="Area3D"]
+process_mode = 3
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("1_0bhhq")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_3b8c2")
+animation = &"talking"
+frame = 1
+frame_progress = 0.30864012
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_cf3xv")

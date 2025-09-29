@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpxril674ji6d"
-path.s3tc="res://.godot/imported/nutubus-Sheet.png-319fd813f4e41b78926186cc24253546.s3tc.ctex"
+uid="uid://btjtygnsuvimi"
+path.s3tc="res://.godot/imported/nutubus rei-Sheet.png-43bdb58f8c99af5f84dfeca87b83bde8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Npc/Nutuburus/nutubus-Sheet.png"
-dest_files=["res://.godot/imported/nutubus-Sheet.png-319fd813f4e41b78926186cc24253546.s3tc.ctex"]
+source_file="res://Npc/Nutuburus/nutubus rei-Sheet.png"
+dest_files=["res://.godot/imported/nutubus rei-Sheet.png-43bdb58f8c99af5f84dfeca87b83bde8.s3tc.ctex"]
 
 [params]
 

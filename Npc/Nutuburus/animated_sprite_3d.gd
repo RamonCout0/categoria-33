@@ -1,14 +1,13 @@
-# npc.gd (Versão Corrigida e Completa)
-extends Area3D
+extends AnimatedSprite3D
+
 
 
 @onready var animacao = $AnimatedSprite3D
 
 var falas: Array[String] = [
-	"Au au Sou Repete",
-	"Parece que está tendo algum tipo de ritual ali.. Au au mas eu não me importo.",
-	"Vamos falar algo que realmente importa Au au!",
-	"Então tinha o Pet, ai sobrou sou eu. Adivinha qual é o meu nome?"
+	"Olá, viajante! O dia está lindo hoje, não acha?",
+	"Se estiver procurando por aventura, ouvi dizer que a velha mina está emitindo sons estranhos...",
+	"Tenha cuidado por lá."
 ]
 
 # A função _ready() é chamada uma vez quando o nó entra na cena.

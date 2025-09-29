@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxrvwq1rjirfm"]
 
 [ext_resource type="Texture2D" uid="uid://cpnica8ksgpu6" path="res://Npc/Pet/pet.png" id="1_bsx6j"]
-[ext_resource type="Script" uid="uid://bkkgiljasug67" path="res://Npc/Pet/pet.gd" id="1_lbq63"]
+[ext_resource type="Script" uid="uid://dw8acur8uf6s8" path="res://Npc/Pet/pet.gd" id="1_lbq63"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lbq63"]
 animations = [{

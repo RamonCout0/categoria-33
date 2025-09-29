@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dtsdfmqe0jp3f"]
+[gd_scene load_steps=19 format=3 uid="uid://dtsdfmqe0jp3f"]
 
 [ext_resource type="Script" uid="uid://bde0f32up3rn" path="res://addons/zylann.hterrain/hterrain.gd" id="1_pj618"]
 [ext_resource type="Resource" path="res://Levels/Terrenos/data.hterrain" id="2_0uohm"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://b373jy2q7v88s" path="res://Objetos/Porta/porta.tscn" id="5_pj618"]
 [ext_resource type="PackedScene" uid="uid://ce1djyvomgpwn" path="res://Npc/Repete/repete.tscn" id="6_0uohm"]
 [ext_resource type="Texture2D" uid="uid://vkwoedtfcb66" path="res://Testes/olhar de elto.png" id="7_suvth"]
+[ext_resource type="PackedScene" uid="uid://bxrvwq1rjirfm" path="res://Npc/Pet/pet.tscn" id="8_hy6ad"]
+[ext_resource type="PackedScene" uid="uid://c6rd5ens3bslf" path="res://Npc/Nutuburus/Nutuburus.tscn" id="9_4maxh"]
+[ext_resource type="Texture2D" uid="uid://bx0atp2jur5w6" path="res://Testes/Captura de tela 2025-07-20 232519.png" id="10_h7j41"]
+[ext_resource type="PackedScene" uid="uid://cudsg0e5e6wrg" path="res://Npc/Nutuburus/nutuburusrei.tscn" id="11_uwaey"]
 
 [sub_resource type="Resource" id="Resource_h7j41"]
 script = ExtResource("3_suvth")
@@ -71,18 +75,18 @@ shadow_enabled = true
 directional_shadow_max_distance = 10.0
 
 [node name="Player" parent="." instance=ExtResource("4_hy6ad")]
-transform = Transform3D(0.035161115, 0, 0.99938166, 0, 1, 0, -0.99938166, 0, 0.035161115, 0.9321461, 0.6815326, -7.052415)
+transform = Transform3D(0.27405998, 0, -0.9617127, 0, 1, 0, 0.9617127, 0, 0.27405998, -47.832253, 0.6815326, -7.052415)
 
 [node name="porta" parent="." instance=ExtResource("5_pj618")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.8284829, 0, 0, 0, 3.4978507, 0, 0, 0, 2.0104895, -1.8791676, 1.6152861, 5.6245255)
+transform = Transform3D(1.8284829, 0, 0, 0, 3.4978507, 0, 0, 0, 2.0104895, -1.9114723, 1.6152856, 10.118355)
 material_override = SubResource("StandardMaterial3D_pj618")
 mesh = SubResource("BoxMesh_hy6ad")
 
 [node name="Repete" parent="." instance=ExtResource("6_0uohm")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 2.8148704, 1.327227, -5.2788534)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -43.61548, 1.327227, -12.752772)
 
 [node name="Olhar" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204.17078, 1408.3066, -608.53)
@@ -90,3 +94,46 @@ pixel_size = 1.123
 billboard = 1
 texture_filter = 1
 texture = ExtResource("7_suvth")
+
+[node name="pet" parent="." instance=ExtResource("8_hy6ad")]
+transform = Transform3D(-0.3785033, 0, -0.9256, 0, 1, 0, 0.9256, 0, -0.3785033, -30.885948, 0.14466763, -13.722917)
+
+[node name="Nutuburus" parent="." instance=ExtResource("9_4maxh")]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.658232, 1, 10.43144)
+
+[node name="Nutuburus2" parent="." instance=ExtResource("9_4maxh")]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4486504, 1, 10.43144)
+
+[node name="Nutuburus3" parent="." instance=ExtResource("9_4maxh")]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3266726, 1, 4.454833)
+
+[node name="Nutuburus4" parent="." instance=ExtResource("9_4maxh")]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.787985, 1, 16.38044)
+
+[node name="Nutuburus5" parent="." instance=ExtResource("9_4maxh")]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.616374, 1, 15.668077)
+
+[node name="Nutuburus6" parent="." instance=ExtResource("9_4maxh")]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.666842, 1, 4.156476)
+
+[node name="Nutuburus7" parent="." instance=ExtResource("9_4maxh")]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6542153, 1, 17.517164)
+
+[node name="Nutuburus8" parent="." instance=ExtResource("9_4maxh")]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7475986, 1, 2.6589699)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1135547, 4.84994, 10.122145)
+billboard = 2
+texture = ExtResource("10_h7j41")
+
+[node name="Nutuburusrei" parent="." instance=ExtResource("11_uwaey")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -16.175175, 0.81524026, 1.9563085)

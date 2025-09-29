@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://c6rd5ens3bslf"]
+
+[ext_resource type="Script" uid="uid://no4aaan3vpsl" path="res://Npc/Nutuburus/nutuburus.gd" id="1_as66m"]
+[ext_resource type="Texture2D" uid="uid://dpxril674ji6d" path="res://Npc/Nutuburus/nutubus-Sheet.png" id="1_f0rh2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as66m"]
+atlas = ExtResource("1_f0rh2")
+region = Rect2(0, 0, 121, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ijex"]
+atlas = ExtResource("1_f0rh2")
+region = Rect2(129, 0, 121, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dcrg"]
+atlas = ExtResource("1_f0rh2")
+region = Rect2(258, 0, 121, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysmw1"]
+atlas = ExtResource("1_f0rh2")
+region = Rect2(387, 0, 121, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra7q1"]
+atlas = ExtResource("1_f0rh2")
+region = Rect2(516, 0, 121, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p3p1"]
+atlas = ExtResource("1_f0rh2")
+region = Rect2(645, 0, 121, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0u48"]
+atlas = ExtResource("1_f0rh2")
+region = Rect2(774, 0, 121, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6upgx"]
+atlas = ExtResource("1_f0rh2")
+region = Rect2(903, 0, 121, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slyjx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as66m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ijex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dcrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysmw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ra7q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p3p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0u48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6upgx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2jmdu"]
+
+[node name="Nutuburus" type="Area3D"]
+script = ExtResource("1_as66m")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_slyjx")
+frame_progress = 0.88637924
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_2jmdu")

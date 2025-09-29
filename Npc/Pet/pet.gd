@@ -1,14 +1,10 @@
 # npc.gd (Versão Corrigida e Completa)
 extends Area3D
 
-
 @onready var animacao = $AnimatedSprite3D
 
 var falas: Array[String] = [
-	"Au au Sou Repete",
-	"Parece que está tendo algum tipo de ritual ali.. Au au mas eu não me importo.",
-	"Vamos falar algo que realmente importa Au au!",
-	"Então tinha o Pet, ai sobrou sou eu. Adivinha qual é o meu nome?"
+	"AU AU, Levei pickoff do malphite e morri."
 ]
 
 # A função _ready() é chamada uma vez quando o nó entra na cena.
@@ -26,7 +22,7 @@ func interact():
 	animacao.play("talking")
 	
 	# Logo depois, iniciamos o diálogo.
-	DialogManager.iniciar_dialogo(falas, "Repete <O dog 2/>")
+	DialogManager.iniciar_dialogo(falas, "Pet <O dog Legit 1/>")
 
 # Esta função é chamada automaticamente quando o diálogo termina, graças à conexão no _ready().
 func on_dialogo_terminado():
