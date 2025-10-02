@@ -1,19 +1,20 @@
-[gd_scene load_steps=19 format=3 uid="uid://dtsdfmqe0jp3f"]
+[gd_scene load_steps=20 format=3 uid="uid://dtsdfmqe0jp3f"]
 
-[ext_resource type="Script" uid="uid://bde0f32up3rn" path="res://addons/zylann.hterrain/hterrain.gd" id="1_pj618"]
-[ext_resource type="Resource" path="res://Levels/Terrenos/data.hterrain" id="2_0uohm"]
-[ext_resource type="Script" uid="uid://b5shkgaq33p20" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_suvth"]
-[ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="4_hy6ad"]
-[ext_resource type="PackedScene" uid="uid://b373jy2q7v88s" path="res://Objetos/Porta/porta.tscn" id="5_pj618"]
-[ext_resource type="PackedScene" uid="uid://ce1djyvomgpwn" path="res://Npc/Repete/repete.tscn" id="6_0uohm"]
-[ext_resource type="Texture2D" uid="uid://vkwoedtfcb66" path="res://Testes/olhar de elto.png" id="7_suvth"]
-[ext_resource type="PackedScene" uid="uid://bxrvwq1rjirfm" path="res://Npc/Pet/pet.tscn" id="8_hy6ad"]
-[ext_resource type="PackedScene" uid="uid://c6rd5ens3bslf" path="res://Npc/Nutuburus/Nutuburus.tscn" id="9_4maxh"]
-[ext_resource type="Texture2D" uid="uid://bx0atp2jur5w6" path="res://Testes/Captura de tela 2025-07-20 232519.png" id="10_h7j41"]
-[ext_resource type="PackedScene" uid="uid://cudsg0e5e6wrg" path="res://Npc/Nutuburus/nutuburusrei.tscn" id="11_uwaey"]
+[ext_resource type="Script" uid="uid://bde0f32up3rn" path="res://addons/zylann.hterrain/hterrain.gd" id="1_74sti"]
+[ext_resource type="Resource" path="res://Levels/Terrenos/data.hterrain" id="2_fy8gi"]
+[ext_resource type="Script" uid="uid://b5shkgaq33p20" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_uq8lk"]
+[ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="4_f74pm"]
+[ext_resource type="PackedScene" uid="uid://b373jy2q7v88s" path="res://Objetos/Porta/porta.tscn" id="5_j2c51"]
+[ext_resource type="PackedScene" uid="uid://ce1djyvomgpwn" path="res://Npc/Repete/repete.tscn" id="6_mprf8"]
+[ext_resource type="Texture2D" uid="uid://vkwoedtfcb66" path="res://Testes/olhar de elto.png" id="7_syw2y"]
+[ext_resource type="PackedScene" uid="uid://bxrvwq1rjirfm" path="res://Npc/Pet/pet.tscn" id="8_byvfb"]
+[ext_resource type="PackedScene" uid="uid://c6rd5ens3bslf" path="res://Npc/Nutuburus/Nutuburus.tscn" id="9_uf3up"]
+[ext_resource type="Texture2D" uid="uid://bx0atp2jur5w6" path="res://Testes/Captura de tela 2025-07-20 232519.png" id="10_1pvhh"]
+[ext_resource type="PackedScene" uid="uid://cudsg0e5e6wrg" path="res://Npc/Nutuburus/nutuburusrei.tscn" id="11_0u0pp"]
+[ext_resource type="PackedScene" uid="uid://ddma80v2usw24" path="res://Objetos/Poste/poste.tscn" id="12_k2fpe"]
 
 [sub_resource type="Resource" id="Resource_h7j41"]
-script = ExtResource("3_suvth")
+script = ExtResource("3_uq8lk")
 mode = 0
 textures = [[], []]
 
@@ -32,6 +33,9 @@ background_mode = 2
 sky = SubResource("Sky_suvth")
 ssr_enabled = true
 glow_enabled = true
+fog_enabled = true
+volumetric_fog_density = 0.0619
+volumetric_fog_albedo = Color(0.73300546, 0.7330054, 0.7330054, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pj618"]
 metallic = 1.0
@@ -45,10 +49,10 @@ refraction_scale = 0.0
 material = SubResource("StandardMaterial3D_0uohm")
 
 [node name="ACasa" type="Node3D"]
-script = ExtResource("1_pj618")
+script = ExtResource("1_74sti")
 map_scale = Vector3(0.5, 0.5, 0.5)
 centered = true
-_terrain_data = ExtResource("2_0uohm")
+_terrain_data = ExtResource("2_fy8gi")
 chunk_size = 16
 collision_enabled = true
 collision_layer = 1
@@ -65,19 +69,17 @@ shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 metadata/_custom_type_script = "uid://bde0f32up3rn"
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hy6ad")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.80593693, -0.5859674, -0.08430941, -0.3169634, 0.30682614, 0.8974364, -0.50000006, 0.75, -0.43301263, 0, 33.36335, 0)
-light_color = Color(0, 0, 0, 1)
-shadow_enabled = true
-directional_shadow_max_distance = 10.0
-
-[node name="Player" parent="." instance=ExtResource("4_hy6ad")]
+[node name="Player" parent="." instance=ExtResource("4_f74pm")]
 transform = Transform3D(0.27405998, 0, -0.9617127, 0, 1, 0, 0.9617127, 0, 0.27405998, -47.832253, 0.6815326, -7.052415)
 
-[node name="porta" parent="." instance=ExtResource("5_pj618")]
+[node name="porta" parent="." instance=ExtResource("5_j2c51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -85,7 +87,7 @@ transform = Transform3D(1.8284829, 0, 0, 0, 3.4978507, 0, 0, 0, 2.0104895, -1.91
 material_override = SubResource("StandardMaterial3D_pj618")
 mesh = SubResource("BoxMesh_hy6ad")
 
-[node name="Repete" parent="." instance=ExtResource("6_0uohm")]
+[node name="Repete" parent="." instance=ExtResource("6_mprf8")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -43.61548, 1.327227, -12.752772)
 
 [node name="Olhar" type="Sprite3D" parent="."]
@@ -93,47 +95,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204.17078, 1408.3066, -608.5
 pixel_size = 1.123
 billboard = 1
 texture_filter = 1
-texture = ExtResource("7_suvth")
+texture = ExtResource("7_syw2y")
 
-[node name="pet" parent="." instance=ExtResource("8_hy6ad")]
+[node name="pet" parent="." instance=ExtResource("8_byvfb")]
 transform = Transform3D(-0.3785033, 0, -0.9256, 0, 1, 0, 0.9256, 0, -0.3785033, -30.885948, 0.14466763, -13.722917)
 
-[node name="Nutuburus" parent="." instance=ExtResource("9_4maxh")]
+[node name="Nutuburus" parent="." instance=ExtResource("9_uf3up")]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.658232, 1, 10.43144)
 
-[node name="Nutuburus2" parent="." instance=ExtResource("9_4maxh")]
+[node name="Nutuburus2" parent="." instance=ExtResource("9_uf3up")]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4486504, 1, 10.43144)
 
-[node name="Nutuburus3" parent="." instance=ExtResource("9_4maxh")]
+[node name="Nutuburus3" parent="." instance=ExtResource("9_uf3up")]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3266726, 1, 4.454833)
 
-[node name="Nutuburus4" parent="." instance=ExtResource("9_4maxh")]
+[node name="Nutuburus4" parent="." instance=ExtResource("9_uf3up")]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.787985, 1, 16.38044)
 
-[node name="Nutuburus5" parent="." instance=ExtResource("9_4maxh")]
+[node name="Nutuburus5" parent="." instance=ExtResource("9_uf3up")]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.616374, 1, 15.668077)
 
-[node name="Nutuburus6" parent="." instance=ExtResource("9_4maxh")]
+[node name="Nutuburus6" parent="." instance=ExtResource("9_uf3up")]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.666842, 1, 4.156476)
 
-[node name="Nutuburus7" parent="." instance=ExtResource("9_4maxh")]
+[node name="Nutuburus7" parent="." instance=ExtResource("9_uf3up")]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6542153, 1, 17.517164)
 
-[node name="Nutuburus8" parent="." instance=ExtResource("9_4maxh")]
+[node name="Nutuburus8" parent="." instance=ExtResource("9_uf3up")]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7475986, 1, 2.6589699)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1135547, 4.84994, 10.122145)
 billboard = 2
-texture = ExtResource("10_h7j41")
+texture = ExtResource("10_1pvhh")
 
-[node name="Nutuburusrei" parent="." instance=ExtResource("11_uwaey")]
+[node name="Nutuburusrei" parent="." instance=ExtResource("11_0u0pp")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -16.175175, 0.81524026, 1.9563085)
+
+[node name="poste" parent="." instance=ExtResource("12_k2fpe")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -18.40547, -1.6349945, 26.823627)

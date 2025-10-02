@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Categoria 33"
 config/tags=PackedStringArray("33", "horror", "indie", "suspense")
+run/main_scene="uid://drh7pbjsctsar"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://r0kpomna5et1"
 
@@ -21,7 +22,7 @@ DialogManager="*res://HUD/Dialogos/dialogos.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/grappling_hook_3d/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
+enabled=PackedStringArray("res://addons/grappling_hook_3d/plugin.cfg", "res://addons/road-generator/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
 
 [input]
 

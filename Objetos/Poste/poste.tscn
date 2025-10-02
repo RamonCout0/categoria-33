@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddma80v2usw24"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1t21bum2alb3" path="res://Objetos/Poste/Poste.obj" id="1_yqbu1"]
+[ext_resource type="Texture2D" uid="uid://ck8s02oupwd7b" path="res://Objetos/Poste/Poste.png" id="2_psp28"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8r08v"]
+albedo_texture = ExtResource("2_psp28")
+metallic = 1.0
+backlight_enabled = true
+texture_filter = 0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rxai1"]
+radius = 0.15625
+height = 2.20549
+
+[node name="poste" type="StaticBody3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Poste" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = ExtResource("1_yqbu1")
+surface_material_override/0 = SubResource("StandardMaterial3D_8r08v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.41039905, 0)
+shape = SubResource("CapsuleShape3D_rxai1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, -0.18636349, 0.93313026, 0.013005829)
+light_color = Color(0.88048273, 0.5997405, 0.24851993, 1)
+light_energy = 13.712
+omni_range = 1.841
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, -0.17608242, 1.0064324, 0)
+light_color = Color(0.88235295, 0.6, 0.24705882, 1)
+light_energy = 6.872
+spot_range = 7.903

@@ -1,0 +1,12 @@
+# Blender 4.5.3 LTS MTL File: 'None'
+# www.blender.org
+
+newmtl m_9477e4cd-7ac7-39a7-29bd-ddd1700af15b
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/Hajik/Downloads/Poste.png

@@ -16,11 +16,9 @@ data = PackedVector3Array(-0.0625, 1.0468999, 0.1563, -0.0625, 0.95309997, 0.156
 [node name="Node3D" type="StaticBody3D"]
 
 [node name="Porta" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087444186, 0, 0.18693113)
 mesh = ExtResource("1_2ut80")
 surface_material_override/0 = SubResource("StandardMaterial3D_oevni")
 surface_material_override/1 = SubResource("StandardMaterial3D_17mde")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087444186, 0, 0.18693113)
 shape = SubResource("ConcavePolygonShape3D_few46")

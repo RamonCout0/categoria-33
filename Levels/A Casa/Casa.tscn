@@ -1,0 +1,105 @@
+[gd_scene load_steps=13 format=3 uid="uid://drh7pbjsctsar"]
+
+[ext_resource type="Script" uid="uid://bde0f32up3rn" path="res://addons/zylann.hterrain/hterrain.gd" id="1_am2iu"]
+[ext_resource type="Script" uid="uid://b5shkgaq33p20" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_8uvq4"]
+[ext_resource type="Resource" uid="uid://cbvcpgn7kd3f" path="res://Levels/A Casa/Terreno/data.hterrain" id="2_crgo4"]
+[ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="3_crgo4"]
+[ext_resource type="PackedScene" uid="uid://dukh6e23nj20" path="res://Objetos/Estrada/estrada.tscn" id="5_crgo4"]
+[ext_resource type="PackedScene" uid="uid://be1d21ryyjiel" path="res://Objetos/Casa/casa.tscn" id="6_hfau4"]
+[ext_resource type="PackedScene" uid="uid://b373jy2q7v88s" path="res://Objetos/Porta/porta.tscn" id="7_vr36s"]
+[ext_resource type="PackedScene" uid="uid://ddma80v2usw24" path="res://Objetos/Poste/poste.tscn" id="8_vr36s"]
+
+[sub_resource type="Resource" id="Resource_17u6y"]
+script = ExtResource("2_8uvq4")
+mode = 0
+textures = [[], []]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vr36s"]
+sky_top_color = Color(0.23290572, 0.053419985, 0, 1)
+sky_horizon_color = Color(0.13132057, 0.08644913, 0.07309413, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.13132057, 0.08644913, 0.07309413, 1)
+
+[sub_resource type="Sky" id="Sky_5plng"]
+sky_material = SubResource("ProceduralSkyMaterial_vr36s")
+
+[sub_resource type="Environment" id="Environment_jw272"]
+background_mode = 2
+sky = SubResource("Sky_5plng")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[node name="HTerrain" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_am2iu")
+centered = true
+_terrain_data = ExtResource("2_crgo4")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_17u6y")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://bde0f32up3rn"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.99994516, 0.00025584685, -0.010468591, 0, 0.9997015, 0.024432179, 0.0104717165, 0.02443084, -0.99964666, 0, 0, 0)
+light_color = Color(0.5739063, 0.16021228, 0, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jw272")
+
+[node name="Player" parent="." instance=ExtResource("3_crgo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.030445, 0.8631127, 2.2444081)
+
+[node name="Casa" parent="." instance=ExtResource("6_hfau4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 54.038822, 1.178391, 1.8777876)
+
+[node name="Node3D" parent="." instance=ExtResource("7_vr36s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.456135, 0.0004349947, 1.7054596)
+
+[node name="Estrada" parent="." instance=ExtResource("5_crgo4")]
+transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 200, -3.8479013, 0.031250954, 7.519039)
+
+[node name="poste" parent="." instance=ExtResource("8_vr36s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 9.327414)
+
+[node name="poste2" parent="." instance=ExtResource("8_vr36s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, -25.467552)
+
+[node name="poste3" parent="." instance=ExtResource("8_vr36s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, -57.261093)
+
+[node name="poste4" parent="." instance=ExtResource("8_vr36s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, -93.45588)
+
+[node name="poste5" parent="." instance=ExtResource("8_vr36s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, -129.7312)
+
+[node name="poste6" parent="." instance=ExtResource("8_vr36s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, -170.92256)
+
+[node name="poste7" parent="." instance=ExtResource("8_vr36s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 41.618042)
+
+[node name="poste8" parent="." instance=ExtResource("8_vr36s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 69.78198)
+
+[node name="poste9" parent="." instance=ExtResource("8_vr36s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 104.64186)
+
+[node name="poste10" parent="." instance=ExtResource("8_vr36s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 137.33067)
+
+[node name="poste11" parent="." instance=ExtResource("8_vr36s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 167.86028)
