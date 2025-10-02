@@ -1,0 +1,114 @@
+[gd_scene load_steps=16 format=3 uid="uid://bmxh065ero2vj"]
+
+[ext_resource type="Script" uid="uid://b3n4emyxdpgvb" path="res://Npc/Bruxa/bruxa.gd" id="1_0jmjj"]
+[ext_resource type="Texture2D" uid="uid://bv4hu2jo181jl" path="res://Npc/Bruxa/Witch lotus.png" id="1_j6gnn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qq57w"]
+radius = 0.265625
+height = 0.53125
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_matdf"]
+atlas = ExtResource("1_j6gnn")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85rfk"]
+atlas = ExtResource("1_j6gnn")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbduu"]
+atlas = ExtResource("1_j6gnn")
+region = Rect2(70, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07lf2"]
+atlas = ExtResource("1_j6gnn")
+region = Rect2(140, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah5dh"]
+atlas = ExtResource("1_j6gnn")
+region = Rect2(210, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5jkp"]
+atlas = ExtResource("1_j6gnn")
+region = Rect2(280, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldder"]
+atlas = ExtResource("1_j6gnn")
+region = Rect2(350, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4n2f"]
+atlas = ExtResource("1_j6gnn")
+region = Rect2(420, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75n5g"]
+atlas = ExtResource("1_j6gnn")
+region = Rect2(490, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m84v3"]
+atlas = ExtResource("1_j6gnn")
+region = Rect2(560, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nwdo"]
+atlas = ExtResource("1_j6gnn")
+region = Rect2(630, 0, 70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t04o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_matdf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85rfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbduu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07lf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah5dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5jkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldder")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4n2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75n5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m84v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nwdo")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 12.0
+}]
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_0jmjj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.034179688, 0)
+shape = SubResource("CapsuleShape3D_qq57w")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+process_mode = 3
+billboard = 1
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_t04o8")
+animation = &"idle"
+frame_progress = 0.90584105

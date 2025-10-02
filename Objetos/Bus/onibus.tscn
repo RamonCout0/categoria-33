@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkpnr7j001hcm"]
+
+[ext_resource type="ArrayMesh" uid="uid://cvjdg40h0mtcx" path="res://Objetos/Bus/Busobj.obj" id="1_7vf3s"]
+[ext_resource type="Texture2D" uid="uid://q55b2uobbbh0" path="res://Objetos/Bus/bus.png" id="2_84crh"]
+
+[sub_resource type="Curve3D" id="Curve3D_7vf3s"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.5481342, 0.35163397, 13.265152, 0, 0, 0, 0, 0, 0, -1.6228338, 0.023131609, -68.8838, 0, 0, 0, 0, 0, 0, -0.5231768, 0.037669778, -70.514275, 0, 0, 0, 0, 0, 0, -0.4950019, 0.071847916, -72.358894, 0, 0, 0, 0, 0, 0, -1.1630169, 0.3202691, -77.772705, 0, 0, 0, 0, 0, 0, 4.823705, 33.660652, -273.5881, 0, 0, 0, 0, 0, 0, -9.2671, 1.4237247, -297.94885),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_go5nv"]
+albedo_texture = ExtResource("2_84crh")
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7vf3s"]
+size = Vector3(1.6584473, 1, 3.876587)
+
+[sub_resource type="Animation" id="Animation_7vf3s"]
+resource_name = "animador"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_84crh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_84crh"]
+_data = {
+&"RESET": SubResource("Animation_84crh"),
+&"animador": SubResource("Animation_7vf3s")
+}
+
+[node name="rota" type="Path3D"]
+curve = SubResource("Curve3D_7vf3s")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+transform = Transform3D(0.99983543, -5.2304425e-05, 0.013080585, -1.8188462e-12, 0.9999796, 0.0039983294, -0.013080178, -0.003998097, 0.99986655, -0.5481342, 0.35163397, 13.265152)
+
+[node name="Onibus" type="AnimatableBody3D" parent="PathFollow3D"]
+transform = Transform3D(0.9999967, 3.2352003e-07, -0.0029692086, 9.934665e-06, 0.9999955, 0.003454843, 0.0029691895, -0.0034548533, 0.99998987, -0.4279575, -0.32786345, 1.7118998)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PathFollow3D/Onibus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6198189, 0.44851094, -1.7906226)
+light_color = Color(0.99999994, 0.8779458, 0.22961226, 1)
+light_energy = 5.844
+omni_range = 0.295
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="PathFollow3D/Onibus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5404587, 0.39238632, -1.7906226)
+light_color = Color(1, 0.8784314, 0.23137255, 1)
+light_energy = 5.844
+omni_range = 0.295
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PathFollow3D/Onibus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5857385, 0.8082616, -0.6241226)
+light_color = Color(1, 0.8784314, 0.23137255, 1)
+light_energy = 16.0
+spot_range = 5.12
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="PathFollow3D/Onibus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6272294, 0.8314757, -0.8841107)
+light_color = Color(1, 0.8784314, 0.23137255, 1)
+light_energy = 16.0
+spot_range = 5.12
+
+[node name="Busobj" type="MeshInstance3D" parent="PathFollow3D/Onibus"]
+mesh = ExtResource("1_7vf3s")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_go5nv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathFollow3D/Onibus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011108398, 0.8058205, 0.016662598)
+shape = SubResource("BoxShape3D_7vf3s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PathFollow3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_84crh")
+}
+autoplay = "animador"
