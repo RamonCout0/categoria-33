@@ -22,7 +22,7 @@ DialogManager="*res://HUD/Dialogos/dialogos.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/grappling_hook_3d/plugin.cfg", "res://addons/road-generator/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
+enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")
 
 [input]
 

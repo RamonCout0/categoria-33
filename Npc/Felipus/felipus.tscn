@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b4jjks86b2tv3"]
 
-[ext_resource type="Script" uid="uid://m2pukon3dups" path="res://felipus.gd" id="1_4o1rl"]
+[ext_resource type="Script" uid="uid://m2pukon3dups" path="res://Npc/Felipus/felipus.gd" id="1_4o1rl"]
 [ext_resource type="Texture2D" uid="uid://bbtp48okx4mmy" path="res://Npc/Felipus/Felipão-Sheet.png" id="2_x0nb1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r5r6p"]
