@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://t8q6l0pswmqh"]
+
+[ext_resource type="Script" uid="uid://cn12ku7htljx8" path="res://Npc/Tvmos/Tvmos.gd" id="1_627uu"]
+[ext_resource type="Texture2D" uid="uid://c0i2r5bm5ju45" path="res://Npc/Tvmos/Tvmos.png" id="2_xwh4p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s14rt"]
+atlas = ExtResource("2_xwh4p")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_627uu"]
+atlas = ExtResource("2_xwh4p")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwh4p"]
+atlas = ExtResource("2_xwh4p")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jthj"]
+atlas = ExtResource("2_xwh4p")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld0vv"]
+atlas = ExtResource("2_xwh4p")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_578ok"]
+atlas = ExtResource("2_xwh4p")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkt6v"]
+atlas = ExtResource("2_xwh4p")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lw3sv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s14rt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_627uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwh4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jthj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld0vv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_578ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkt6v")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jhg4d"]
+
+[node name="Tvmos" type="Area3D"]
+process_mode = 3
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("1_627uu")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 2
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_lw3sv")
+animation = &"talking"
+frame_progress = 0.56785184
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_jhg4d")

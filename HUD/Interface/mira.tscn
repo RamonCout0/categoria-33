@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://cuw6q3ds7ny0n"]
+
+[ext_resource type="Texture2D" uid="uid://c730tf5dkx7x3" path="res://HUD/Interface/teste mira-Sheet.png" id="1_6wlyr"]
+[ext_resource type="Script" uid="uid://q34c6wdh3d3r" path="res://HUD/Interface/mira.gd" id="1_y1xcp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1xcp"]
+atlas = ExtResource("1_6wlyr")
+region = Rect2(40, 0, 40, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_580n4"]
+atlas = ExtResource("1_6wlyr")
+region = Rect2(80, 0, 40, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wea1w"]
+atlas = ExtResource("1_6wlyr")
+region = Rect2(120, 0, 40, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m5bf"]
+atlas = ExtResource("1_6wlyr")
+region = Rect2(160, 0, 40, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15ivv"]
+atlas = ExtResource("1_6wlyr")
+region = Rect2(200, 0, 40, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whux6"]
+atlas = ExtResource("1_6wlyr")
+region = Rect2(240, 0, 40, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2jkr"]
+atlas = ExtResource("1_6wlyr")
+region = Rect2(280, 0, 40, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgsaw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1xcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_580n4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wea1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m5bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15ivv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2jkr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_y1xcp")
+
+[node name="Mira" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mira"]
+process_mode = 3
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_mgsaw")
+frame_progress = 0.12678829

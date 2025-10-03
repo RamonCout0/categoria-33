@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dovssi26ref30"]
+[gd_scene load_steps=7 format=3 uid="uid://dovssi26ref30"]
 
 [ext_resource type="Script" uid="uid://nn2gkk8rw7qh" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://bhbgv7hf67thd" path="res://Player/fp_camera.gd" id="2_4ntmi"]
-[ext_resource type="PackedScene" uid="uid://cuw6q3ds7ny0n" path="res://HUD/mira.tscn" id="3_btcbx"]
+[ext_resource type="PackedScene" uid="uid://cuw6q3ds7ny0n" path="res://HUD/Interface/mira.tscn" id="3_btcbx"]
+[ext_resource type="Script" uid="uid://dl5ic2dkhixld" path="res://Player/spot_light_3d.gd" id="3_gwnis"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvfyp"]
 
@@ -31,5 +32,17 @@ transform = Transform3D(-0.025601137, 0, 0.99967223, 0, 1, 0, -0.99967223, 0, -0
 target_position = Vector3(3, -0.3, -0.29)
 collision_mask = 5
 collide_with_areas = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="cabeca/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04828304, -0.31526, -0.072444916)
+light_energy = 4.134
+distance_fade_begin = 147.6
+spot_range = 10.188
+script = ExtResource("3_gwnis")
+sway_amount = 5.0
+player_node_path = NodePath("../../..")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="cabeca/Camera3D"]
+current = true
 
 [node name="HUD" parent="." instance=ExtResource("3_btcbx")]

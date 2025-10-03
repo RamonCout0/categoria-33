@@ -20,6 +20,15 @@ config/icon="uid://r0kpomna5et1"
 
 DialogManager="*res://HUD/Dialogos/dialogos.tscn"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/Hajik/Videos/videos.mp4"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")

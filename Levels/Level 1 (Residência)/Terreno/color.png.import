@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ykps6k8pp7aw"
-path="res://.godot/imported/color.png-d4c33e84aab397c9f533ac2bc314a429.ctex"
+path="res://.godot/imported/color.png-5cd131fefac0dc33284fc62381ff5149.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/A Casa/Terreno/color.png"
-dest_files=["res://.godot/imported/color.png-d4c33e84aab397c9f533ac2bc314a429.ctex"]
+source_file="res://Levels/Level 1 (Residência)/Terreno/color.png"
+dest_files=["res://.godot/imported/color.png-5cd131fefac0dc33284fc62381ff5149.ctex"]
 
 [params]
 

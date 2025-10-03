@@ -1,22 +1,22 @@
 [gd_scene load_steps=20 format=3 uid="uid://drh7pbjsctsar"]
 
-[ext_resource type="Script" uid="uid://bde0f32up3rn" path="res://addons/zylann.hterrain/hterrain.gd" id="1_am2iu"]
-[ext_resource type="Script" uid="uid://b5shkgaq33p20" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_8uvq4"]
-[ext_resource type="Resource" uid="uid://cbvcpgn7kd3f" path="res://Levels/A Casa/Terreno/data.hterrain" id="2_crgo4"]
-[ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="3_crgo4"]
-[ext_resource type="PackedScene" uid="uid://dukh6e23nj20" path="res://Objetos/Estrada/estrada.tscn" id="5_crgo4"]
-[ext_resource type="PackedScene" uid="uid://be1d21ryyjiel" path="res://Objetos/Casa/casa.tscn" id="6_hfau4"]
-[ext_resource type="PackedScene" uid="uid://b373jy2q7v88s" path="res://Objetos/Porta/porta.tscn" id="7_vr36s"]
-[ext_resource type="PackedScene" uid="uid://ddma80v2usw24" path="res://Objetos/Poste/poste.tscn" id="8_vr36s"]
-[ext_resource type="PackedScene" uid="uid://77i1o5k0hxu" path="res://Objetos/Parada/parada.tscn" id="9_5plng"]
-[ext_resource type="PackedScene" uid="uid://dkpnr7j001hcm" path="res://Objetos/Bus/onibus.tscn" id="10_jw272"]
-[ext_resource type="PackedScene" uid="uid://b4jjks86b2tv3" path="res://Npc/Felipus/felipus.tscn" id="11_0lr17"]
-[ext_resource type="PackedScene" uid="uid://c6rd5ens3bslf" path="res://Npc/Nutuburus/Nutuburus.tscn" id="12_xbpf4"]
-[ext_resource type="PackedScene" uid="uid://ct25yuu6oc1tk" path="res://Npc/Totem/Totem.tscn" id="13_i1wsp"]
-[ext_resource type="PackedScene" uid="uid://bmxh065ero2vj" path="res://Npc/Bruxa/bruxa.tscn" id="14_wwxjx"]
+[ext_resource type="Script" uid="uid://bde0f32up3rn" path="res://addons/zylann.hterrain/hterrain.gd" id="1_s44ev"]
+[ext_resource type="Resource" uid="uid://cbvcpgn7kd3f" path="res://Levels/Level 1 (Residência)/Terreno/data.hterrain" id="2_7nc6i"]
+[ext_resource type="Script" uid="uid://b5shkgaq33p20" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_2ykrv"]
+[ext_resource type="PackedScene" uid="uid://dovssi26ref30" path="res://Player/player.tscn" id="4_xe8tq"]
+[ext_resource type="PackedScene" uid="uid://be1d21ryyjiel" path="res://Objetos/Casa/casa.tscn" id="5_562k7"]
+[ext_resource type="PackedScene" uid="uid://b373jy2q7v88s" path="res://Objetos/Porta/porta.tscn" id="6_ref0k"]
+[ext_resource type="PackedScene" uid="uid://dukh6e23nj20" path="res://Objetos/Estrada/estrada.tscn" id="7_7wtm8"]
+[ext_resource type="PackedScene" uid="uid://ddma80v2usw24" path="res://Objetos/Poste/poste.tscn" id="8_0nxjn"]
+[ext_resource type="PackedScene" uid="uid://77i1o5k0hxu" path="res://Objetos/Parada/parada.tscn" id="9_tl6wt"]
+[ext_resource type="PackedScene" uid="uid://dkpnr7j001hcm" path="res://Objetos/Bus/onibus.tscn" id="10_a7bjv"]
+[ext_resource type="PackedScene" uid="uid://b4jjks86b2tv3" path="res://Npc/Felipus/felipus.tscn" id="11_olrgk"]
+[ext_resource type="PackedScene" uid="uid://c6rd5ens3bslf" path="res://Npc/Nutuburus/Nutuburus.tscn" id="12_nkhh3"]
+[ext_resource type="PackedScene" uid="uid://ct25yuu6oc1tk" path="res://Npc/Totem/Totem.tscn" id="13_8x6u8"]
+[ext_resource type="PackedScene" uid="uid://bmxh065ero2vj" path="res://Npc/Bruxa/bruxa.tscn" id="14_52rk3"]
 
 [sub_resource type="Resource" id="Resource_17u6y"]
-script = ExtResource("2_8uvq4")
+script = ExtResource("3_2ykrv")
 mode = 0
 textures = [[], []]
 
@@ -48,9 +48,9 @@ height_falloff = 1.5691692e-05
 
 [node name="HTerrain" type="Node3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-script = ExtResource("1_am2iu")
+script = ExtResource("1_s44ev")
 centered = true
-_terrain_data = ExtResource("2_crgo4")
+_terrain_data = ExtResource("2_7nc6i")
 chunk_size = 32
 collision_enabled = true
 collision_layer = 1
@@ -75,52 +75,52 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jw272")
 
-[node name="Player" parent="." instance=ExtResource("3_crgo4")]
+[node name="Player" parent="." instance=ExtResource("4_xe8tq")]
 transform = Transform3D(0.047106426, 0, 0.99888986, 0, 1, 0, -0.99888986, 0, 0.047106426, 48.030445, 0.8631127, 2.2444081)
 
-[node name="Casa" parent="." instance=ExtResource("6_hfau4")]
+[node name="Casa" parent="." instance=ExtResource("5_562k7")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 54.038822, 1.178391, 1.8777876)
 
-[node name="Node3D" parent="." instance=ExtResource("7_vr36s")]
+[node name="Node3D" parent="." instance=ExtResource("6_ref0k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.456135, 0.0004349947, 1.7054596)
 
-[node name="Estrada" parent="." instance=ExtResource("5_crgo4")]
+[node name="Estrada" parent="." instance=ExtResource("7_7wtm8")]
 transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 200, -3.8479013, 0.031250954, 7.519039)
 
-[node name="poste" parent="." instance=ExtResource("8_vr36s")]
+[node name="poste" parent="." instance=ExtResource("8_0nxjn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 9.327414)
 
-[node name="poste2" parent="." instance=ExtResource("8_vr36s")]
+[node name="poste2" parent="." instance=ExtResource("8_0nxjn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, -25.467552)
 
-[node name="poste3" parent="." instance=ExtResource("8_vr36s")]
+[node name="poste3" parent="." instance=ExtResource("8_0nxjn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, -57.261093)
 
-[node name="poste4" parent="." instance=ExtResource("8_vr36s")]
+[node name="poste4" parent="." instance=ExtResource("8_0nxjn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, -93.45588)
 
-[node name="poste5" parent="." instance=ExtResource("8_vr36s")]
+[node name="poste5" parent="." instance=ExtResource("8_0nxjn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, -129.7312)
 
-[node name="poste6" parent="." instance=ExtResource("8_vr36s")]
+[node name="poste6" parent="." instance=ExtResource("8_0nxjn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, -170.92256)
 
-[node name="poste7" parent="." instance=ExtResource("8_vr36s")]
+[node name="poste7" parent="." instance=ExtResource("8_0nxjn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 41.618042)
 
-[node name="poste8" parent="." instance=ExtResource("8_vr36s")]
+[node name="poste8" parent="." instance=ExtResource("8_0nxjn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 69.78198)
 
-[node name="poste9" parent="." instance=ExtResource("8_vr36s")]
+[node name="poste9" parent="." instance=ExtResource("8_0nxjn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 104.64186)
 
-[node name="poste10" parent="." instance=ExtResource("8_vr36s")]
+[node name="poste10" parent="." instance=ExtResource("8_0nxjn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 137.33067)
 
-[node name="poste11" parent="." instance=ExtResource("8_vr36s")]
+[node name="poste11" parent="." instance=ExtResource("8_0nxjn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.1932645, 0.23009562, 167.86028)
 
-[node name="parada" parent="." instance=ExtResource("9_5plng")]
+[node name="parada" parent="." instance=ExtResource("9_tl6wt")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 1.8904667, 0.28125095, 5.7538347)
 
 [node name="FogVolume" type="FogVolume" parent="."]
@@ -135,17 +135,17 @@ size = Vector3(43.332397, 37.639404, 4.048828)
 shape = 0
 material = SubResource("FogMaterial_5plng")
 
-[node name="rota" parent="." instance=ExtResource("10_jw272")]
+[node name="rota" parent="." instance=ExtResource("10_a7bjv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.7904537, 0.094693184, 149.64137)
 
-[node name="Felipus" parent="." instance=ExtResource("11_0lr17")]
+[node name="Felipus" parent="." instance=ExtResource("11_olrgk")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.5602939, 2.2107248, 5.798246)
 
-[node name="Nutuburus" parent="." instance=ExtResource("12_xbpf4")]
+[node name="Nutuburus" parent="." instance=ExtResource("12_nkhh3")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.0567386, 2, 42.282948)
 
-[node name="Area3D" parent="." instance=ExtResource("13_i1wsp")]
+[node name="Area3D" parent="." instance=ExtResource("13_8x6u8")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 15.226761, 1.5999999, -11.982072)
 
-[node name="Area3D2" parent="." instance=ExtResource("14_wwxjx")]
+[node name="Area3D2" parent="." instance=ExtResource("14_52rk3")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 48.333946, 1.2184942, 6.851803)
